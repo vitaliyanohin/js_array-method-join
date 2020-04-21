@@ -1,14 +1,12 @@
 'use strict';
 
 function applyCustomJoin() {
-  [].__proto__.join2 = function(separator) {
+  [].__proto__.join2 = function(separator = ',') {
     let strLine = '';
     let sep = separator;
 
     for (let i = 0; i < this.length; i++) {
-      if (sep === undefined) {
-        sep = ',';
-      } else if (sep === null) {
+      if (sep === null) {
         sep = 'null';
       }
 
